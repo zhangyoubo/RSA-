@@ -13,6 +13,10 @@
 		CC9E7A541EC337E2009E683C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7A521EC337E2009E683C /* Main.storyboard */; };
 		CC9E7A561EC337E2009E683C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7A551EC337E2009E683C /* Assets.xcassets */; };
 		CC9E7A591EC337E2009E683C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7A571EC337E2009E683C /* LaunchScreen.storyboard */; };
+		CC9E7A631EC33825009E683C /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9E7A621EC33825009E683C /* RSAEncryptor.m */; };
+		CC9E7A671EC3391D009E683C /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7A651EC3391D009E683C /* private_key.p12 */; };
+		CC9E7A681EC3391D009E683C /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = CC9E7A661EC3391D009E683C /* public_key.der */; };
+		CC9E7A6B1EC33950009E683C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9E7A6A1EC33950009E683C /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,11 @@
 		CC9E7A551EC337E2009E683C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9E7A581EC337E2009E683C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9E7A5A1EC337E2009E683C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC9E7A611EC33825009E683C /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		CC9E7A621EC33825009E683C /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
+		CC9E7A651EC3391D009E683C /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
+		CC9E7A661EC3391D009E683C /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
+		CC9E7A6A1EC33950009E683C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9E7A6B1EC33950009E683C /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +54,7 @@
 			children = (
 				CC9E7A481EC337E2009E683C /* RSA 加解密 */,
 				CC9E7A471EC337E2009E683C /* Products */,
+				CC9E7A691EC3394F009E683C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,8 @@
 		CC9E7A481EC337E2009E683C /* RSA 加解密 */ = {
 			isa = PBXGroup;
 			children = (
+				CC9E7A641EC3391D009E683C /* Cer */,
+				CC9E7A601EC33825009E683C /* RSAEncryptor */,
 				CC9E7A4C1EC337E2009E683C /* AppDelegate.h */,
 				CC9E7A4D1EC337E2009E683C /* AppDelegate.m */,
 				CC9E7A4F1EC337E2009E683C /* ViewController.h */,
@@ -77,6 +90,33 @@
 				CC9E7A4A1EC337E2009E683C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC9E7A601EC33825009E683C /* RSAEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				CC9E7A611EC33825009E683C /* RSAEncryptor.h */,
+				CC9E7A621EC33825009E683C /* RSAEncryptor.m */,
+			);
+			path = RSAEncryptor;
+			sourceTree = "<group>";
+		};
+		CC9E7A641EC3391D009E683C /* Cer */ = {
+			isa = PBXGroup;
+			children = (
+				CC9E7A651EC3391D009E683C /* private_key.p12 */,
+				CC9E7A661EC3391D009E683C /* public_key.der */,
+			);
+			name = Cer;
+			path = cer;
+			sourceTree = "<group>";
+		};
+		CC9E7A691EC3394F009E683C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC9E7A6A1EC33950009E683C /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +181,8 @@
 				CC9E7A591EC337E2009E683C /* LaunchScreen.storyboard in Resources */,
 				CC9E7A561EC337E2009E683C /* Assets.xcassets in Resources */,
 				CC9E7A541EC337E2009E683C /* Main.storyboard in Resources */,
+				CC9E7A671EC3391D009E683C /* private_key.p12 in Resources */,
+				CC9E7A681EC3391D009E683C /* public_key.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC9E7A511EC337E2009E683C /* ViewController.m in Sources */,
+				CC9E7A631EC33825009E683C /* RSAEncryptor.m in Sources */,
 				CC9E7A4E1EC337E2009E683C /* AppDelegate.m in Sources */,
 				CC9E7A4B1EC337E2009E683C /* main.m in Sources */,
 			);
@@ -219,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -260,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -273,6 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4GB3PHABNJ;
 				INFOPLIST_FILE = "RSA 加解密/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "LianYun.RSA----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +329,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4GB3PHABNJ;
 				INFOPLIST_FILE = "RSA 加解密/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "LianYun.RSA----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
